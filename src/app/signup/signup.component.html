@@ -1,0 +1,18 @@
+<main class="container" @fadein>
+    <div class="signup">
+        <h1>Signup</h1>
+        <pre>Welcome ! Please register to open your account</pre>
+        <label for="username">Enter your username:</label>
+        <input type="text" [(ngModel)]="username" id="username">
+        <label for="email">Enter your email:</label>
+        <input type="text" [(ngModel)]="email" id="email">
+        <label for="password">Enter your password:</label>
+        <input type="password" [(ngModel)]="password" id="password">
+        <button class="signup-button" (click)="signup()">Sign up</button>
+        <p>Old User? <a class="login-button" routerLink="/login">Login</a></p>
+        <p>Display: {{displayText}}</p>
+    </div>
+    <div class="welcome">
+        <h1>Welcome to ToDo app!</h1>
+    </div>
+</main>
