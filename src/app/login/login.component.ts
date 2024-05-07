@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { trigger, style, animate, transition } from '@angular/animations';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, HttpClientModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
   animations:[
@@ -19,11 +20,22 @@ import { trigger, style, animate, transition } from '@angular/animations';
   ]
 })
 export class LoginComponent {
-    email = "";
-    password = "";
-    displayText = "";
+  constructor (private http: HttpClient) {}
+  
+  email = "";
+  password = "";
 
-    login(){
-      this.displayText = this.email + this.password;
-    }
+  login(){
+    this.http.post("http://localhost:2323/login", {
+      email: this.email, password: this.password
+    }).subscribe((res: any)=>{
+      if(res.token){
+        localStorage.setItem('token', res.token);
+      }
+    },
+    (error: any) => {
+        console.log(error.error);
+        alert(error.error.msg != undefined ? error.error.msg : error.error.err);
+    })
+  }
 }

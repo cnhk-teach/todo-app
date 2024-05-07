@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { trigger, style, animate, transition } from '@angular/animations';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, HttpClientModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css',
   animations:[
@@ -19,12 +20,24 @@ import { trigger, style, animate, transition } from '@angular/animations';
   ]
 })
 export class SignupComponent {
+  constructor (private http: HttpClient){}
+
   username = ""
   email = "";
   password = "";
-  displayText = "";
 
   signup(){
-    this.displayText = this.username + this.email + this.password;
+    this.http.post('http://localhost:2323/signup', {
+      username: this.username,
+      email: this.email,
+      password: this.password
+    }).subscribe((res: any)=>{
+      if(res.msg){
+        alert(res.msg)
+      }
+    },
+    (error: any) => {
+      alert(error.error.err ? error.error.msg : error.error.err)
+    })
   }
 }

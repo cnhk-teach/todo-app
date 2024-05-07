@@ -8,9 +8,9 @@
         <input type="text" [(ngModel)]="email" id="email">
         <label for="password">Enter your password:</label>
         <input type="password" [(ngModel)]="password" id="password">
+        <br>
         <button class="signup-button" (click)="signup()">Sign up</button>
         <p>Old User? <a class="login-button" routerLink="/login">Login</a></p>
-        <p>Display: {{displayText}}</p>
     </div>
     <div class="welcome">
         <h1>Welcome to ToDo app!</h1>
