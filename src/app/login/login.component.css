@@ -3,6 +3,7 @@
     margin: 200px;
     border: 2px gray solid;
     border-radius: 12px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     justify-content: center;
     height: 60vh;
 }
