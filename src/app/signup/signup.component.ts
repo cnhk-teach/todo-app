@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
@@ -19,8 +19,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ])
   ]
 })
+
 export class SignupComponent {
-  constructor (private http: HttpClient){}
+  constructor (private http: HttpClient, private router: Router){}
 
   username = ""
   email = "";
@@ -34,6 +35,7 @@ export class SignupComponent {
     }).subscribe((res: any)=>{
       if(res.msg){
         alert(res.msg)
+        this.router.navigate(['/login'])
       }
     },
     (error: any) => {

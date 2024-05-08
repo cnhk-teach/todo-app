@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
@@ -19,8 +19,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ])
   ]
 })
+
 export class LoginComponent {
-  constructor (private http: HttpClient) {}
+  constructor (private http: HttpClient, private router: Router) {}
   
   email = "";
   password = "";
@@ -31,6 +32,7 @@ export class LoginComponent {
     }).subscribe((res: any)=>{
       if(res.token){
         localStorage.setItem('token', res.token);
+        this.router.navigate(['/'])
       }
     },
     (error: any) => {
