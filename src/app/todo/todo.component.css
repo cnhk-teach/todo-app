@@ -1,3 +1,133 @@
-h1 {
+main {
+    display: flex;
+    background-color: rgb(195, 172, 140);
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container {
+    background-color: rgb(3, 3, 3);
+    margin: 10vh 20vh 10vh 20vh;
+    padding: 10px;
+    width: 80vw;
+    height: auto;
+    border-radius: 2em;
+    color: white;
+}
+
+.container h1 {
     text-align: center;
+}
+
+.header {
+    display: flex;
+    position: sticky;
+    width: 75vw;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 20px 0 20px;
+}
+
+.logout {
+    all:unset;
+}
+
+.logout:hover {
+    cursor: pointer;
+}
+
+.todo-done {
+    display: flex;
+    border: 2px rgba(255, 115, 0, 0.952) solid;
+    border-radius: 35px;
+    padding: 40px;
+    height: 23vh;
+    width: 30vw;
+    margin-top: 1%;
+    margin-left: 22vw;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.done-count {
+    display: flex;
+    background-color: rgba(255, 115, 0, 0.952);
+    color: black;
+    width: 10vw;
+    height: 17vh;
+    border-radius: 500px;
+    font-size: 1.5em;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-todo {
+    display: flex;
+    margin-top: 2%;
+    margin-left: 33%;
+    width: 30vw;
+    height: 10vh;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.new-todo input {
+    width: 70%;
+    height: 50%;
+    font-size: 1.5em;
+    border-radius: 10px;
+    background-color: rgb(48, 45, 45);
+    color: white;
+    text-align: center;
+}
+
+.new-todo svg {
+    margin-left: 20px;
+    padding: 10px;
+    background-color: rgba(255, 115, 0, 0.952);
+    border-radius: 1.8em;
+    color: black;
+}
+
+.todo-list {
+    width: 80%;
+    margin-left: 10%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.todo-item {
+    background-color: antiquewhite;
+    border-radius: 25px;
+    color: black;
+    flex-basis: 40%;
+    align-content: center;
+    margin: 10px;
+    font-size: larger;
+    padding: 10px;
+}
+
+button {
+    font-size: large;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+.done-button {
+    background-color: rgba(255, 115, 0, 0.952);
+}
+
+.done {
+    background-color: tan;
+    text-decoration:line-through;
+}
+
+.done button {
+    display: none;
 }
