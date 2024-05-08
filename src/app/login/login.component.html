@@ -1,12 +1,14 @@
 <main class="container" @fadein>
     <div class="welcome">
-        <h1>Welcome Back!</h1>
+        <div class="bg-img">
+            <h1>Welcome Back!</h1>
+        </div>
     </div>
     <div class="login">
         <h1>Login</h1>
         <pre>Welcome back! Please login to your account</pre>
         <label for="email">Enter your email:</label>
-        <input type="text" [(ngModel)]="email" id="email">
+        <input type="email" [(ngModel)]="email" id="email">
         <label for="password">Enter your password:</label>
         <input type="password" [(ngModel)]="password" id="password">
         <br>

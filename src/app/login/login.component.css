@@ -23,6 +23,12 @@
     text-align: center;
 }
 
+.bg-img {
+    background-color: rgba(15, 40, 233, 0.549);
+    color: white;
+    font-size: 1.5em;
+}
+
 .login {
     display: inline-grid;
     width: 50%;
@@ -33,6 +39,11 @@
     text-align: center;
 }
 
+pre {
+    font-size: 1.3em;
+    font-family:fantasy;
+}
+
 .form {
     display: inline-block;
     background-color: aliceblue;
@@ -40,6 +51,10 @@
 
 label, input, .login {
     font-size: larger;
+}
+
+input, button {
+    border-radius: 0.7em;
 }
 
 .login-button {

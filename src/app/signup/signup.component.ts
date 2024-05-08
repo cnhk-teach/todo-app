@@ -37,7 +37,7 @@ export class SignupComponent {
       }
     },
     (error: any) => {
-      alert(error.error.err ? error.error.msg : error.error.err)
+      alert(error.error.msg  != undefined ? error.error.msg : error.error.err)
     })
   }
 }
