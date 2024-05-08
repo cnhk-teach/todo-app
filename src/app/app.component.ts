@@ -16,7 +16,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     if (localStorage.getItem('token') && window.location.pathname != '/'){
-      this.router.navigate(['/'])
+      this.router.navigate(['/todo'])
     } else {
       this.router.navigate(['login'])
     }

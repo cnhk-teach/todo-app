@@ -32,7 +32,7 @@ export class LoginComponent {
     }).subscribe((res: any)=>{
       if(res.token){
         localStorage.setItem('token', res.token);
-        this.router.navigate(['/'])
+        this.router.navigate(['/todo'])
       }
     },
     (error: any) => {
