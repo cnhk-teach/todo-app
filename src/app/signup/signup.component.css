@@ -62,6 +62,10 @@ input, button {
     font-size: larger;
 }
 
+.signup-button:hover {
+    cursor: pointer;
+}
+
 .login-button {
     text-decoration: none;
     color: rgb(142, 90, 190);
