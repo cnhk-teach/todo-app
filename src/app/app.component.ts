@@ -15,7 +15,7 @@ export class AppComponent implements OnInit{
   constructor (private router: Router) {}
 
   ngOnInit(): void {
-    if (localStorage.getItem('token') && window.location.pathname != '/'){
+    if (localStorage.getItem('token')){
       this.router.navigate(['/todo'])
     } else {
       this.router.navigate(['login'])
